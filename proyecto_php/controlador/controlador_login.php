@@ -13,7 +13,7 @@ class Controlador {
         if ($this->usuario->verificar($correo, $contraseña)) {
             session_start();
             $_SESSION['correo'] = $correo;
-            header("Location: vista/login.php"); 
+            header("Location: index.php"); 
             exit();
         } else {
             return "Correo o contraseña incorrectos.";
@@ -24,7 +24,7 @@ class Controlador {
         session_start();
         session_unset();
         session_destroy();
-        header("Location: vista.php"); // Redirige a la página de login después de cerrar sesión
+        header("Location: login.php"); // Redirige a la página de login después de cerrar sesión
         exit();
     }
 }
