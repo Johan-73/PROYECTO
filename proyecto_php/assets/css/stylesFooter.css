@@ -1,0 +1,21 @@
+footer {
+    height: 15%;
+    background-color: #593134;
+    padding: 1rem 3rem;
+}
+
+footer h3 {
+    margin-top: initial;
+    color: white;
+    font-size: 15px;
+    font-family: 'Lato';
+}
+
+footer div label {
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.footer-img {
+    width: 30px;
+}

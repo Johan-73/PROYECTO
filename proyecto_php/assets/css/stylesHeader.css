@@ -1,0 +1,40 @@
+header{
+    height: 15%;
+    background: rgb(255, 255, 255);
+    padding: 0 50px;
+    color:aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a img{
+    height: 100px;
+}
+
+.menu a{
+    color:#000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+    font-family: 'Lato';
+    font-size: 23px;
+}
+
+
+.menu a:hover{
+    color: #B69696;
+}
+
+.extremos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.centrado {
+    display: flex;
+    align-items: center;
+}
+

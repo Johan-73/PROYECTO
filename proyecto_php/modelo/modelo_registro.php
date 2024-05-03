@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\proyecto_php\config\dbconect.php';
+require_once 'C:\xampp\htdocs\Practicas\Cerezos\proyecto_php\config\dbconect.php';
 
 class usuario {
     private $conn;
@@ -8,14 +8,13 @@ class usuario {
         $this->conn = $conexion;
     }
 
-    public function registrarUsuario($nombre, $correo, $contraseña) {
+    public function registrarUsuario($nombre, $correo, $contrasena) {
         $nombre = mysqli_real_escape_string($this->conn, $nombre);
         $correo = mysqli_real_escape_string($this->conn, $correo);
-        $contraseña = mysqli_real_escape_string($this->conn, $contraseña);
+        $contrasena = mysqli_real_escape_string($this->conn, $contrasena);
         // hace lo mismo que en el modelo del login: coge todos los caracteres literalmente y no con posible sintaxis sql
 
-        $sql = "INSERT INTO usuario (NOMBRE, CORREO, CONTRASEÑA) VALUES ('$nombre', '$correo', '$contraseña')";
-
+        $sql = "INSERT INTO usuario (NOMBRE, CORREO, CONTRASENA) VALUES ('$nombre', '$correo', '$contrasena')";
 
         if (mysqli_query($this->conn, $sql)) {
             return true; 

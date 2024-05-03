@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\proyecto_php\config\dbconect.php';
+require_once 'C:\xampp\htdocs\Practicas\Cerezos\proyecto_php\config\dbconect.php';
 class usuario {
     private $conn;
 
@@ -12,7 +12,7 @@ class usuario {
         $contraseña = mysqli_real_escape_string($this->conn, $contraseña);
     //esta parte pone todos los caracteres literalmente como están para que no se toman como lenguaje de sql
 
-        $sql = "SELECT * FROM usuario WHERE CORREO='$correo' AND CONTRASEÑA='$contraseña'";
+        $sql = "SELECT * FROM usuario WHERE CORREO='$correo' AND CONTRASENA='$contraseña'";
         $resultado = mysqli_query($this->conn, $sql);
 
         if (mysqli_num_rows($resultado) == 1) {

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "proyecto_php";
+$database = "cerezosphp";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
