@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header{
     height: 20%;
     background: rgb(255, 255, 255);
@@ -14,7 +20,7 @@ header{
 
 .checkbtn{
     color: #593134;
-    font-size: 20px;
+    font-size: 22px;
     display: none;
     margin-left: 1rem;
 }
@@ -66,7 +72,7 @@ header{
         height: calc(100vh - 90px);
         background:#593134 ;
         left: 100%;
-        top: 90px;  
+        top: 110px;  
         z-index: 100;
         transition: 0.8s;
         display: flex;
@@ -82,6 +88,8 @@ header{
 
     .checkbtn{
         display: block;
+        top: 50%;
+        
     }
 
     #check:checked ~ .menu{

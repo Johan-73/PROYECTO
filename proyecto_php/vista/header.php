@@ -15,9 +15,10 @@
 
         <div class="centrado">
 
+            
             <nav class="menu centrado">
                 <a href="#">PRODUCTOS</a>
-                <a href="#">PROMOCIONES</a>          
+                <a href="#">PROMOCIONES</a>
             </nav>
             <nav class="logos-menu centrado">
                 <a href="?view=login">
@@ -26,9 +27,10 @@
                 </a>
                 <a href="#">
                     <img src="assets/img/iconoCarritoCompras.png" alt="Logo Carrito Compras">
-                </a>                             
+                </a>
             </nav>
-            <nav class="hamburguesa">
+
+            <nav class="boton">
                 <input type="checkbox" id="check">
                 <label for="check" class="checkbtn">
                     <i class="fa-solid fa-bars"></i>
