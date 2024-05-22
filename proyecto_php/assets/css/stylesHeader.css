@@ -1,28 +1,44 @@
 header{
-    height: 15%;
+    height: 20%;
     background: rgb(255, 255, 255);
     padding: 0 50px;
-    color:aliceblue;
+    color:rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo a img{
-    height: 100px;
+    height: 80px;
+}
+
+.checkbtn{
+    color: #593134;
+    font-size: 20px;
+    display: none;
+    margin-left: 1rem;
+}
+
+/*con esto escondo la cajita/check para la pc*/
+#check{
+    display: none;
 }
 
 .menu a{
     color:#000000;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none;  
     padding: 0 10px;
     transition: 0.4s;
     font-family: 'Lato';
-    font-size: 23px;
+    font-size: 19px;
+    margin-left: 1rem;
 }
 
-
+.logos-menu a img{
+    width: 25px;
+    margin-left: 1rem;
+}
 .menu a:hover{
     color: #B69696;
 }
@@ -38,3 +54,38 @@ header{
     align-items: center;
 }
 
+
+
+
+
+/*Responsive*/  
+@media(max-width: 640px){   
+    .menu {
+        position: fixed;
+        width: 100vw;
+        height: calc(100vh - 90px);
+        background:#593134 ;
+        left: 100%;
+        top: 90px;  
+        z-index: 100;
+        transition: 0.8s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .menu a {
+        margin: 1rem 0;
+        color: white;
+    }
+
+    .checkbtn{
+        display: block;
+    }
+
+    #check:checked ~ .menu{
+        left: 0;
+    }
+
+}   

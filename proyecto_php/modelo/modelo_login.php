@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\Practicas\Cerezos\proyecto_php\config\dbconect.php';
-class usuario {
+require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbconect.php';
+class modelo_login {
     private $conn;
 
     public function __construct($conexion) {
@@ -12,6 +12,7 @@ class usuario {
         $contraseña = mysqli_real_escape_string($this->conn, $contraseña);
     //esta parte pone todos los caracteres literalmente como están para que no se toman como lenguaje de sql
 
+        //Aqui se esta validando que el registro si exista
         $sql = "SELECT * FROM usuario WHERE CORREO='$correo' AND CONTRASENA='$contraseña'";
         $resultado = mysqli_query($this->conn, $sql);
 

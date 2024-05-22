@@ -1,0 +1,45 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    font-family: "Lato", sans-serif;
+}
+#moduloLogin{
+    margin: 0;
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input {
+    font-weight: bold;
+    text-align: center; 
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="submit"]{
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #D9BFC1;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+#ini_s{
+    background-color: #A68A8A;
+    color: #F2ECEB;
+}
+#cre_c{
+ 
+    border-color: #A68A8A;
+}
+
+

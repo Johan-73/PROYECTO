@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.logo {
+    min-width: 75px;
+    width: 8%;
+    height: auto;
+    margin-left: 3%;
+}
+
+header {
+    /*background-color: #F2F2F2;*/
+    padding: 1%;
+    padding: 1em;
+    min-height: 60px;
+}
+
+section {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    min-height: 65vh;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 15px;
+
+}
+
+form {
+    padding: 1.5em 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 120%;
+    max-width: 500px;
+
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h1 {
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+h5 {
+    font-size: 0.75em;
+    font-weight: 400;
+    color: #666666;
+    margin-top: 0.25em;
+}
+
+label {
+    font-size: 0.9em;
+    color: black;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0px;
+}
+
+input {
+    border: 1px solid #adadad;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+}
+
+.form-txt {
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.form-txt a {
+    color: #b5b5b5;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-size: 0.8em;
+    transition: color 0.4s;
+}
+
+.form-txt a:hover {
+    color: #666;
+}
+
+input[type="submit"] {
+    border: 0;
+    padding: 0.75em 2.5em;
+    width: fit-content;
+    margin-top: 2em;
+    color: whitesmoke;
+    background-color: #BF9FA1;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    transition: color 0.3s, background-color 0.3s, font-weight 0.3s;
+}
+
+input[type="submit"]:hover {
+    color: #fff;
+    background-color: #8c7275;
+    font-weight: bold;
+}
+

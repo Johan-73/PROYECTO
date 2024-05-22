@@ -1,7 +1,7 @@
 <?php
-require_once 'C:\xampp\htdocs\Practicas\Cerezos\proyecto_php\config\dbconect.php';
+require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbconect.php';
 
-class usuario {
+class modelo_registro {
     private $conn;
 
     public function __construct($conexion) {
