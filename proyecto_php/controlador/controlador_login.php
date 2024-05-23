@@ -5,19 +5,29 @@ require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbc
 class Controlador {
     private $usuario;
 
+
     public function __construct($conexion) {
         $this->usuario = new modelo_login($conexion);
     }
 
     public function iniciarSesion($correo, $contraseña) {
-        if ($this->usuario->verificar($correo, $contraseña)) {
+        //UNICO Usuario y Contraseña con la que se puede acceder a la vista de tipo Administrador.
+        if($correo == "administrador@admin.com" and $contraseña == "administrador123"){
             session_start();
-            $_SESSION['correo'] = $correo;
-            header("Location: ../index.php"); 
+            header("Location: /Practicas/Cerezos/PROYECTO/proyecto_php/vista/Admin/principalAdmin.php");
             exit();
-        } else {
-            return "Correo o contraseña incorrectos.";
+        }else{
+            if ($this->usuario->verificar($correo, $contraseña)) {
+                session_start();
+                $_SESSION['correo'] = $correo;
+                header("Location: ../index.php"); 
+                exit();
+            } else {
+                return "Correo o contraseña incorrectos.";
+            }
+
         }
+       
     }
 
     public function cerrarSesion() {

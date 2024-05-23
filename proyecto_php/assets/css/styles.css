@@ -9,8 +9,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
-body section {
-    height: 70%;
+body > section {
+    height: 70vh;
+    background: url(../img/imagenFondoCerezos.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: auto;
 }

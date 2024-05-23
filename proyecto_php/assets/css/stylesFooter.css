@@ -1,5 +1,5 @@
 footer {
-    height: 15%;
+    height: 11vh;
     background-color: #593134;
     padding: 1rem 3rem;
 }
@@ -13,7 +13,7 @@ footer h3 {
 
 footer div label {
     color: white;
-    margin-left: 0.5rem;
+    margin-left: 0.5rem
 }
 
 .footer-img {

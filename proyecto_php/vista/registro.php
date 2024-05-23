@@ -1,23 +1,6 @@
-
-<!-- <h2>Registro de Usuario</h2>
-
-<form action="controlador/controlador_registro.php" method="post">
-
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre"><br>
-
-    <label for="correo">Correo electrónico:</label><br>
-    <input type="email" id="correo" name="correo"><br>
-
-    <label for="contraseña">Contraseña:</label><br>
-    <input type="password" id="contraseña" name="contraseña"><br><br>
-
-    <input type="submit" value="Registrar">
-</form> -->
-
 <link rel="stylesheet" href="assets\css\stylesRegistro.css">
 
-<section>
+<section class="registro">
     <form action="controlador/controlador_registro.php" method="post">
         <h1>REGISTRARME</h1>
 
@@ -26,8 +9,15 @@
             <label for="nombre">Nombres y apellidos</label>
             <input type="text" id="nombre" name="nombre" required>
 
+            <!--  identificador / nombre que mostrara -->
             <label for="correo">Correo</label>
             <input type="email" id="correo" name="correo" required>
+
+            <label for="telefono">Telefono</label>
+            <input type="text" id="telefono" name="telefono" required>
+            <!-- type: el tipo de dato de la cajita -->
+            <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
 
             <label for="contraseña">Contraseña</label>
             <input type="password" id="contraseña" name="contraseña" required>

@@ -1,11 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header{
-    height: 20%;
+.header{
+    min-height: 15vh;
     background: rgb(255, 255, 255);
     padding: 0 50px;
     color:rgb(255, 255, 255);
@@ -14,11 +8,11 @@ header{
     align-items: center;
 }
 
-.logo a img{
+.header-logo a img{
     height: 80px;
 }
 
-.checkbtn{
+.header-checkbtn{
     color: #593134;
     font-size: 22px;
     display: none;
@@ -30,7 +24,7 @@ header{
     display: none;
 }
 
-.menu a{
+.header-menu a{
     color:#000000;
     text-transform: uppercase;
     text-decoration: none;  
@@ -41,15 +35,15 @@ header{
     margin-left: 1rem;
 }
 
-.logos-menu a img{
+.header-logos-menu a img{
     width: 25px;
     margin-left: 1rem;
 }
-.menu a:hover{
+.header-menu a:hover{
     color: #B69696;
 }
 
-.extremos {
+.header-extremos {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -66,13 +60,13 @@ header{
 
 /*Responsive*/  
 @media(max-width: 640px){   
-    .menu {
+    .header-menu {
         position: fixed;
         width: 100vw;
-        height: calc(100vh - 90px);
-        background:#593134 ;
+        height: calc(100vh - 15vh);
+        background:#593134;
         left: 100%;
-        top: 110px;  
+        top: 15vh;
         z-index: 100;
         transition: 0.8s;
         display: flex;
@@ -81,18 +75,18 @@ header{
         flex-direction: column;
     }
 
-    .menu a {
+    .header-menu a {
         margin: 1rem 0;
         color: white;
     }
 
-    .checkbtn{
+    .header-checkbtn{
         display: block;
         top: 50%;
-        
+        cursor: pointer;
     }
 
-    #check:checked ~ .menu{
+    #check:checked ~ .header-menu{
         left: 0;
     }
 

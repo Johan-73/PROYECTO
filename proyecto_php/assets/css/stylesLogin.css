@@ -8,10 +8,14 @@
     margin: 0;
     display: grid;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; /*arriba*/
+    left: 50%; /*Izquierda*/
     transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2%; /*con este le doy el espacio entre los elementos del formulario, el espacio blanco*/
+
 }
+
 input {
     font-weight: bold;
     text-align: center; 
