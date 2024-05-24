@@ -54,6 +54,7 @@
                 <th>CATEGORIA</th>
                 <th>Botones EL/ACT</th>
             </tr>
+            
                 <?php
                     require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbconect.php';
 
@@ -64,18 +65,26 @@
                         while($fila = $resultadoREFERENCIA->fetch_assoc()){
                             echo "<tr><td>" .$fila["Referencia"] . "</td><td>" .$fila["Nombre"] . "</td><td>" . $fila["Existencias"] . 
                                 "</td><td>" . $fila["ValorVenta"] . "</td><td>" . $fila["Descripcion"] . "</td><td>" . $fila["Promocion"] .
-                                "</td><td>" . $fila["Categoria"] . "</td></tr>";
+                                "</td><td>" . $fila["Categoria"] . "</td>".
+                                "<td><button>
+                                <a href='editarProducto.php'> 
+                                     <i class='fa-regular fa-pen-to-square'></i>
+                                </a>
+                                <button>
+                                <i class='fa-solid fa-trash-can'></i>           
+                                </button></td></tr>" ;
                         }
                     } else {
                         echo "<tr><td colspan='2'>No se encontraron resultados</td></tr>";
-                    }
-                    $conn->close();
+                        }
+                     $conn->close();
                 ?>
          
         </table>
+
         <div class="boton-añadir">
             <button>
-            <a href="añadirProducto.php">+ Añadir Producto</a>
+                <a href="añadirProducto.php">+ Añadir Producto</a>
             </button> 
             
         </div>

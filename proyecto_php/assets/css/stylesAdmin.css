@@ -47,3 +47,27 @@ body section {
 .tablaAdmin th{
     background-color: #F2ECEB;
 }
+
+.boton-añadir button{
+    margin-top: 2rem;
+
+    /* Margen de la isquierda */
+    margin-left: 3.7rem;
+
+    /* Margen de abajo */
+    margin-bottom: 1.5rem;
+    background-color: #B69696;
+
+    /* para aumentar el tamaño del elemento */
+    padding: 0.5rem;
+
+    /* Para poner los bordes redondos */
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.boton-añadir a{
+    text-decoration: none;
+    font-size: 13px;
+    color: white;
+}
