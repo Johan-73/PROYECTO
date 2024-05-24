@@ -1,48 +1,43 @@
 <?php
 require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\modelo\modelo_añadirProducto.php';
 require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbconect.php';
+class Productocontrolador
+{
+    private $producto;
 
-class ProductoController {
-    public function agregarProducto() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $producto = new producto($this->getConnection());
-
-            // Setear propiedades del producto
-            $producto->Nombre = $_POST['Nombre'];
-            $producto->Existencias = $_POST['Existencias'];
-            $producto->ValorVenta = $_POST['ValorVenta'];
-            $producto->Referencia = $_POST['Referencia'];
-            $producto->Descripcion = $_POST['Descripcion'];
-            $producto->Imagen = $_POST['Imagen']; // Este sería el nombre de la imagen, puedes manejar la carga de archivos aparte
-
-            // Intentar crear el producto
-            if ($producto->create()) {
-                // Producto creado exitosamente, redireccionar o mostrar mensaje de éxito
-                header("Location: mensaje.php?mensaje=Producto creado exitosamente");
-                exit();
-            } else {
-                // Error al crear el producto, redireccionar o mostrar mensaje de error
-                header("Location: mensaje.php?mensaje=Error al crear el producto");
-                exit();
-            }
-        }
+     //Conexion con el modelo
+    public function __construct($conexion)
+    {
+        $this->producto = new modelo_añadirProducto($conexion);
     }
 
-    private function getConnection() {
-        // Código para establecer la conexión a la base de datos
-        // Debes reemplazar estas líneas con tu código de conexión real
-        $host = 'localhost';
-        $db_name = 'tu_base_de_datos';
-        $username = 'tu_usuario';
-        $password = 'tu_contraseña';
+    public function create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion)
+    {
+        return $this->producto->create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion);
+    } // manda a crear un nuevo registro en la base de datos
+}
 
-        try {
-            $conn = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conn;
-        } catch(PDOException $e) {
-            echo "Error de conexión: " . $e->getMessage();
-        }
+$controlador = new ProductoControlador($conn); // Instancia del controlador
+
+$registro_exitoso = false;
+$error = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $Nombre = $_POST['Nombre'];
+    $Referencia = $_POST['Referencia'];
+    $Existencias = $_POST['Existencias'];
+    $ValorVenta = $_POST['ValorVenta'];
+    $Descripcion = $_POST['Descripcion'];
+
+    if ($controlador->create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion)) {
+        header("Location: ../vista/principalAdmin.php?view=login"); //para redirigir al administrador a la pagina principal
+        exit();
+    } else {
+        $error = "Error al registrar producto.";
+        echo $error;
     }
 }
+
+
+
 ?>
