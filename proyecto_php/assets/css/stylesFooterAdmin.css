@@ -1,0 +1,31 @@
+footer {
+    height: 11vh;
+    background-color: #593134;
+    padding: 1rem 3rem;
+}
+
+footer h3 {
+    margin-top: initial;
+    color: white;
+    font-size: 15px;
+    font-family: 'Lato';
+}
+
+.centrado label{
+    color: white;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-family: "lato";
+}
+
+.footer-img{
+    cursor: pointer;
+    color: white;
+    margin-left: 0rem;
+    width: 20px;
+}
+    
+.Instagram, .WhatsApp {
+    text-decoration: none;
+}

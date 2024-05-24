@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .header-logo a img{
@@ -61,6 +62,7 @@
 
 
 
+
 /*Responsive*/  
 @media(max-width: 640px){   
     .header-menu {
@@ -92,5 +94,6 @@
     #check:checked ~ .header-menu{
         left: 0;
     }
+
 
 }   

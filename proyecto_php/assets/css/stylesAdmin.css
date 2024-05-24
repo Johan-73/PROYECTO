@@ -59,6 +59,7 @@ body section {
     /* Para poner los bordes redondos */
     border-radius: 0.5rem;
     border: none;
+    cursor: pointer;
 }
 
 .boton-añadir a{
