@@ -8,9 +8,9 @@ class modelo_añadirProducto {
         $this->conn = $conexion;
     }
 
-    public function create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion) {
+    public function create($Nombre, $Referencia, $Existencias, $Categoria, $ValorVenta, $Descripcion) {
        
-        $sql = "INSERT INTO producto (Nombre, Referencia, Existencias, ValorVenta, Descripcion) VALUES ('$Nombre', '$Referencia', '$Existencias','$ValorVenta','$Descripcion')";
+        $sql = "INSERT INTO producto (Nombre, Referencia, Existencias, Categoria, ValorVenta, Descripcion) VALUES ('$Nombre', '$Referencia', '$Existencias','$Categoria','$ValorVenta','$Descripcion')";
 
         if (mysqli_query($this->conn, $sql)) {
             return true; 
