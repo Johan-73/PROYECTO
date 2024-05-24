@@ -19,43 +19,48 @@
     ?>
 
     <section class="tablaAdmin">
-  
+
         <?php
-            //Esta variable se utiliza para saber que vista es a la que hace refencia
-            $view = '';
+        //Esta variable se utiliza para saber que vista es a la que hace refencia
+        $view = '';
 
-            //isset determina si el valor es diferente de null
-            if (isset($_GET["view"])) {
-                //Asigno lo que trae el parametro view a la variable $view
-                $view = $_GET["view"];
-            }
+        //isset determina si el valor es diferente de null
+        if (isset($_GET["view"])) {
+            //Asigno lo que trae el parametro view a la variable $view
+            $view = $_GET["view"];
+        }
 
-            //En este switch definimos que se va a mostrar entre el header y el footer
-            // switch ($view) {
-            //     case 'login':
-            //         include('vista/login.php');
-            //         break;
-            //     case 'registro':
-            //         include('vista/registro.php');
-            //         break;
-            // }
+        //En este switch definimos que se va a mostrar entre el header y el footer
+        // switch ($view) {
+        //     case 'login':
+        //         include('vista/login.php');
+        //         break;
+        //     case 'registro':
+        //         include('vista/registro.php');
+        //         break;
+        // }
 
-                
-            // if(ff){
-            //     while(dd){
 
-            //     }
-                
-            // }
+        // if(ff){
+        //     while(dd){
+
+        //     }
+
+        // }
         ?>
+
         <div class="botones-consulta">
-            <label for="Busqueda-por">Busqueda por: </label>
+            <form action="principalAdmin.php" method="post">
+                <label for="Busqueda-por">Busqueda por: </label>
                 <input type="text" id="Nombre" name="Nombre" placeholder="Nombre">
                 <input type="text" id="Referencia" name="Referencia" placeholder="Referencia">
+                <input type="submit" value="Consultar" class="boton-consultar">
+            </form>
+
         </div>
-            
-      
-        
+
+
+
 
         <table>
             <tr>
@@ -68,43 +73,53 @@
                 <th>CATEGORIA</th>
                 <th>Botones EL/ACT</th>
             </tr>
-            
-                <?php
-                    require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbconect.php';
 
+            <?php
+            require_once 'C:\xampp\htdocs\Practicas\Cerezos\PROYECTO\proyecto_php\config\dbconect.php';
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $Nombre = $_POST['Nombre'];
+                $Referencia = $_POST['Referencia'];
+
+                if (strlen($Nombre) > 0 || strlen($Referencia) > 0) {
+                    $consultaREFERENCIA = "SELECT Referencia, Nombre, Existencias, ValorVenta, Descripcion, Promocion, Categoria FROM producto WHERE Nombre = '$Nombre' OR Referencia ='$Referencia'";
+                } else {
                     $consultaREFERENCIA = "SELECT Referencia, Nombre, Existencias, ValorVenta, Descripcion, Promocion, Categoria FROM producto";
-                    $resultadoREFERENCIA = $conn->query($consultaREFERENCIA);
+                }
+            } else {
+                $consultaREFERENCIA = "SELECT Referencia, Nombre, Existencias, ValorVenta, Descripcion, Promocion, Categoria FROM producto";
+            }
+            $resultadoREFERENCIA = $conn->query($consultaREFERENCIA);
 
-                    if($resultadoREFERENCIA->num_rows > 0){
-                        while($fila = $resultadoREFERENCIA->fetch_assoc()){
-                            echo "<tr><td>" .$fila["Referencia"] . "</td><td>" .$fila["Nombre"] . "</td><td>" . $fila["Existencias"] . 
-                                "</td><td>" . $fila["ValorVenta"] . "</td><td>" . $fila["Descripcion"] . "</td><td>" . $fila["Promocion"] .
-                                "</td><td>" . $fila["Categoria"] . "</td>".
-                                "<td><button>
+            if ($resultadoREFERENCIA->num_rows > 0) {
+                while ($fila = $resultadoREFERENCIA->fetch_assoc()) {
+                    echo "<tr><td>" . $fila["Referencia"] . "</td><td>" . $fila["Nombre"] . "</td><td>" . $fila["Existencias"] .
+                        "</td><td>" . $fila["ValorVenta"] . "</td><td>" . $fila["Descripcion"] . "</td><td>" . $fila["Promocion"] .
+                        "</td><td>" . $fila["Categoria"] . "</td>" .
+                        "<td><button>
                                 <a href='editarProducto.php'> 
                                      <i class='fa-regular fa-pen-to-square'></i>
                                 </a>
                                 <button>
                                 <i class='fa-solid fa-trash-can'></i>           
-                                </button></td></tr>" ;
-                        }
-                    } else {
-                        echo "<tr><td colspan='2'>No se encontraron resultados</td></tr>";
-                        }
-                     $conn->close();
-                ?>
-         
+                                </button></td></tr>";
+                }
+            } else {
+                echo "<tr><td colspan='2'>No se encontraron resultados</td></tr>";
+            }
+            $conn->close();
+            ?>
+
         </table>
 
         <div class="boton-añadir">
             <button>
                 <a href="añadirProducto.php">+ Añadir Producto</a>
-            </button> 
-            
+            </button>
+
         </div>
-        
+
     </section>
-    
+
 
     <?php
     include('footerAdmin.php');

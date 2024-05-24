@@ -82,6 +82,12 @@ body section {
     border-radius: 0.3rem;
 }
 
+.boton-consultar{
+    background-color: #B69696;
+    color: white;
+    cursor: pointer;
+}
+
 
 
 .botones-consulta label{
