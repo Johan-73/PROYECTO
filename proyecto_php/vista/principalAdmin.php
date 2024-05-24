@@ -40,9 +40,19 @@
             //         break;
             // }
 
-        
+                
+            // if(ff){
+            //     while(dd){
+
+            //     }
+                
+            // }
         ?>
-   
+        <h1>
+            <input type="text" id="Nombre" name="Nombre">
+        </h1>
+        
+
         <table>
             <tr>
                 <th>REFERENCIA</th>
