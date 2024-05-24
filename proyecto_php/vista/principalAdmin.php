@@ -48,9 +48,13 @@
                 
             // }
         ?>
-        <h1>
-            <input type="text" id="Nombre" name="Nombre">
-        </h1>
+        <div class="botones-consulta">
+            <label for="Busqueda-por">Busqueda por: </label>
+                <input type="text" id="Nombre" name="Nombre" placeholder="Nombre">
+                <input type="text" id="Referencia" name="Referencia" placeholder="Referencia">
+        </div>
+            
+      
         
 
         <table>

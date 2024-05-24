@@ -13,10 +13,10 @@
 }
 
 .header-checkbtn{
-    color: #593134;
+    color: #593134 !important;
     font-size: 22px;
     display: none;
-    margin-left: 1rem;
+    margin-left: 1.3rem;
 }
 
 /*con esto escondo la cajita/check para la pc*/
@@ -84,6 +84,7 @@
         display: block;
         top: 50%;
         cursor: pointer;
+        
     }
 
     #check:checked ~ .header-menu{

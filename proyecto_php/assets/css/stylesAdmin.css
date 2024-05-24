@@ -1,8 +1,3 @@
-html {
-    height: 100%;
-    width: 100%;
-}
-
 body {
     margin: 0;
     height: 100%;
@@ -33,7 +28,7 @@ body section {
     /* Si hay espacio a los lados, poner la misma cantidad a ambos lados */
     margin:auto;
     /* margen de abajo */
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 .tablaAdmin th, td{
@@ -52,7 +47,7 @@ body section {
     margin-top: 2rem;
 
     /* Margen de la isquierda */
-    margin-left: 3.7rem;
+    margin-left: 4.2rem;
 
     /* Margen de abajo */
     margin-bottom: 1.5rem;
@@ -70,4 +65,27 @@ body section {
     text-decoration: none;
     font-size: 13px;
     color: white;
+}
+
+.botones-consulta{
+    margin-left: 4.3rem;
+    margin-top: 2rem;
+    display: flex;
+    
+}
+
+.botones-consulta input{
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+
+
+.botones-consulta label{
+    color: white;
+    font-family: "lato";
+    font-size: 15px;
 }
