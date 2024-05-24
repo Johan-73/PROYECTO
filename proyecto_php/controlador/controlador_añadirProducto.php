@@ -11,9 +11,9 @@ class Productocontrolador
         $this->producto = new modelo_añadirProducto($conexion);
     }
 
-    public function create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion)
+    public function create($Nombre, $Referencia, $Existencias,$Categoria, $ValorVenta, $Descripcion)
     {
-        return $this->producto->create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion);
+        return $this->producto->create($Nombre, $Referencia, $Existencias,$Categoria, $ValorVenta, $Descripcion);
     } // manda a crear un nuevo registro en la base de datos
 }
 
@@ -26,10 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Nombre = $_POST['Nombre'];
     $Referencia = $_POST['Referencia'];
     $Existencias = $_POST['Existencias'];
+    $Categoria = $_POST['Categoria'] ;
     $ValorVenta = $_POST['ValorVenta'];
     $Descripcion = $_POST['Descripcion'];
 
-    if ($controlador->create($Nombre, $Referencia, $Existencias, $ValorVenta, $Descripcion)) {
+    if ($controlador->create($Nombre, $Referencia, $Existencias, $Categoria, $ValorVenta, $Descripcion)) {
         header("Location: ../vista/principalAdmin.php?view=login"); //para redirigir al administrador a la pagina principal
         exit();
     } else {
@@ -41,3 +42,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
+
