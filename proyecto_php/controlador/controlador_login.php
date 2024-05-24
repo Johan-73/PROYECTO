@@ -14,7 +14,7 @@ class Controlador {
         //UNICO Usuario y Contraseña con la que se puede acceder a la vista de tipo Administrador.
         if($correo == "administrador@admin.com" and $contraseña == "administrador123"){
             session_start();
-            header("Location: /Practicas/Cerezos/PROYECTO/proyecto_php/vista/Admin/principalAdmin.php");
+            header("Location: /Practicas/Cerezos/PROYECTO/proyecto_php/vista/principalAdmin.php");
             exit();
         }else{
             if ($this->usuario->verificar($correo, $contraseña)) {

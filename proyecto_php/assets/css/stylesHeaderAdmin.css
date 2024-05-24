@@ -1,0 +1,96 @@
+.headerAdmin{
+    min-height: 15vh;
+    background: rgb(255, 255, 255);
+    padding: 0 50px;
+    color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo a img{
+    height: 80px;
+}
+
+/* .header-checkbtn{
+    color: #593134;
+    font-size: 22px;
+    display: none;
+    margin-left: 1rem;
+}
+
+/*con esto escondo la cajita/check para la pc*/
+/* #check{
+    display: none;
+} */ 
+
+/* .header-menu a{
+    color:#000000;
+    text-transform: uppercase;
+    text-decoration: none;  
+    padding: 0 10px;
+    transition: 0.4s;
+    font-family: 'Lato';
+    font-size: 19px;
+    margin-left: 1rem;
+} */
+
+.header-logos-menu a img{
+    width: 25px;
+    margin-left: 1rem;
+    
+
+}
+
+.header-menu a:hover{
+    color: #B69696;
+}
+
+.header-Admin-extremos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.centrado-admin {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+/*Responsive*/  
+@media(max-width: 640px){   
+    .header-menu {
+        position: fixed;
+        width: 100vw;
+        height: calc(100vh - 15vh);
+        background:#593134;
+        left: 100%;
+        top: 15vh;
+        z-index: 100;
+        transition: 0.8s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header-menu a {
+        margin: 1rem 0;
+        color: white;
+    }
+
+    .header-checkbtn{
+        display: block;
+        top: 50%;
+        cursor: pointer;
+    }
+
+    #check:checked ~ .header-menu{
+        left: 0;
+    }
+
+}   

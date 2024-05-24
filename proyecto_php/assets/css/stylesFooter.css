@@ -11,11 +11,20 @@ footer h3 {
     font-family: 'Lato';
 }
 
-footer div label {
+.centrado label{
     color: white;
-    margin-left: 0.5rem
+    text-decoration: none;
+    margin-left: 0.5rem;
+    cursor: pointer;
 }
 
-.footer-img {
+.footer-img{
+    cursor: pointer;
+    color: white;
+    margin-left: 0rem;
     width: 20px;
+}
+    
+.Instagram, .WhatsApp {
+    text-decoration: none;
 }

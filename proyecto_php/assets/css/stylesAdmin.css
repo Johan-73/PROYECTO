@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+body section {
+    height: 70vh;
+    background: url(../img/imagenFondoCerezos.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: auto;
+}
+
+.tablaAdmin table{
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    /* border: 3px solid black ; */
+    background-color: white;
+    font-family: 'lato';    
+    font-size: 13px;
+    text-align: center;
+    height: 10px;
+    /* Si hay espacio a los lados, poner la misma cantidad a ambos lados */
+    margin:auto;
+    /* margen de abajo */
+    margin-top: 4rem;
+}
+
+.tablaAdmin th, td{
+    padding: 15px;
+    letter-spacing: 1px;
+}
+
+.tablaAdmin tr{
+    border: 1px solid black ;
+}
+.tablaAdmin th{
+    background-color: #F2ECEB;
+}
